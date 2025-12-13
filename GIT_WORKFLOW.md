@@ -17,13 +17,15 @@ Dokumen ini menjelaskan **alur kerja Git (Git Workflow)** yang wajib diikuti ole
 
 Repository menggunakan beberapa jenis branch:
 
-| Jenis Branch | Fungsi             | Keterangan                                 |
-| ------------ | ------------------ | ------------------------------------------ |
-| `main`       | Branch utama       | Berisi hasil akhir proyek (final)          |
-| `nama_nim`   | Branch individu    | Digunakan untuk tugas & eksperimen pribadi |
-| `feature/*`  | Pengembangan fitur | Digabung ke branch tugas / main            |
-| `fix/*`      | Perbaikan bug      | Untuk bug atau error                       |
-| `docs/*`     | Dokumentasi        | Markdown, ERD, laporan                     |
+| Jenis Branch      | Nama / Pola Branch | Fungsi                | Keterangan                       |
+| ----------------- | ------------------ | --------------------- | -------------------------------- |
+| Utama             | `main`             | Branch final          | Berisi hasil akhir proyek        |
+| Individu          | `nama_nim`         | Tugas pribadi         | Normalisasi, laporan, eksperimen |
+| Backend           | `backend/*`        | Pengembangan backend  | API, logic server, integrasi DB  |
+| Frontend          | `frontend/*`       | Pengembangan frontend | Implementasi tampilan aplikasi   |
+| UI                | `ui/*`             | Desain antarmuka      | Layout, komponen, styling        |
+| UX & QA           | `ux-qa/*`          | UX & pengujian        | User flow, testing, validasi     |
+| Database Engineer | `database/*`       | Basis data            | ERD, normalisasi, skema DB       |
 
 ⚠️ **Dilarang push langsung ke `main` tanpa Pull Request.**
 
