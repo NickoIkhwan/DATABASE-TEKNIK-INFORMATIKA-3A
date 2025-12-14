@@ -70,6 +70,36 @@ Penggabungan tabel User dan Customer dilakukan untuk menjaga normalisasi data hi
 7...
 8...
 9...
+10...
+11...
+12...
+13...
+14...
+15...
+16...
+17...
+18. Tabel Detail Pengiriman (Di tambahkan oleh Fajar Niko P)
+    ENITITAS UTAMA : Detail Pengiriman
+    ATRIBUT : ini di bawah yaa
+            : Primary Key sebagai identitas unik data detail pengiriman
+            : Order_Id Foreign Key (FK) merujuk ke tabel Pesanan (Tabel 13). Mengidentifikasi pesanan mana yang terkait dengan detail ini.
+            :Courier_Id  Foreign Key (FK) merujuk ke tabel Jasa Pengiriman (Tabel 17). Mengidentifikasi layanan pengiriman yang digunakan.
+            : Tracking_Number  Nomor resi resmi dari jasa pengiriman
+            : Shipped_At  Tanggal dan waktu paket diserahkan ke kurir atau mulai dikirim
+            : Delivered_At | Tanggal dan waktu paket berhasil diterima oleh customer
+            :  Pengiriman_Status | Status terbaru paket (misalnya: Diambil Kurir, Dalam Perjalanan, Tiba di Hub, Diterima)
+Relasi Tabel Detail Pengiriman
+Tabel Detail Pengiriman adalah tabel yang sangat terikat dengan alur transaksi:
+| *Pesanan* (Tabel 13) | 1 : 1 | Satu Pesanan memiliki Satu Detail Pengiriman (Order_Id FK). |
+| *Jasa Pengiriman* (Tabel 17) | N : 1 | Banyak Detail Pengiriman menggunakan Satu Jenis Layanan Pengiriman (Courier_Id FK). |
+| *Patner Company* (Tabel 28) | N : 1 | Secara tidak langsung, Jasa Pengiriman terkait dengan Partner Company (Logistik). |
+ Kesimpulan
+Tabel Detail Pengiriman dirancang untuk memastikan pengelolaan data logistik berjalan efisien, terpusat, dan mendukung fitur pelacakan real-time. Desain ini memenuhi kaidah normalisasi hingga Third Normal Form (3NF).
+
+    
+
+    
+    
 22. Tabel Klaim Promo (Ditambahkan oleh Dimas Faril Ardiansyah)
     ENTITAS UTAMA : (klaim promo)
     ATRIBUT : sebagai berikut ya ges
