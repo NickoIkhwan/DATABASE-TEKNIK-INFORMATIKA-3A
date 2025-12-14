@@ -84,17 +84,15 @@ Alasan:
 ## ERD (ASCII Diagram)
 
 ```
-+----------------+        +------------------+        +-----------------------+
-|      User      | 1    1 |    Keranjang     | 1    N | Item Keranjang        |
-+----------------+--------+------------------+--------+-----------------------+
-| user_id(PK)    |        | keranjang_id(PK) |        | item_keranjang_id(PK) |
-| tipe_user      |        | user_id(FK)      |        | keranjang_id(FK)      |
-| email          |        | total_qty        |        | variant_id(FK)        |
-| password       |        | total_price      |        | quantity              |
-| no_hp          |        | last_update      |        | subtotal              |
-| status         |        +------------------+        +-----------------------+  
-| login_terakhir |
-+----------------+ 
++-------------------+        +-----------------------+        +-----------------------+
+|     Keranjang     | 1    N |    Item Keranjang     | 1    1 |        Variant        |
++-------------------+--------+-----------------------+--------+-----------------------+
+| item_keranjang(PK)|        | item_keranjang_id(PK) |        | varian_id(PK)         |
+| user_id(FK)       |        | keranjang_id(FK)      |        | product_id(FK)        |
+| total_qty         |        | variant_id(FK)        |        | varian_type           |
+| total_price       |        | quantity              |        | ukuran_varian         |
+| last_update       |        | subtotal              |        +-----------------------+  
++-------------------+        +-----------------------+         
 ```
 
 ---
