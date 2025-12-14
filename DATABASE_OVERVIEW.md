@@ -1,4 +1,4 @@
-# Analisis Tugas Basis Data: Tabel Produk (Faiq Akhmad)
+# Analisis Tugas Basis Data: Tabel Produk 
 
 ## No. 1: Analisis Atribut pada Tabel Produk
 
@@ -52,3 +52,4 @@ Produk memiliki relasi N:M dengan entitas lain (seperti Keranjang atau Pesanan) 
     * **Jalur:** `Produk` (1:N) $\rightarrow$ `Varian` (1:N) $\rightarrow$ `Item Pesanan` (N:1) $\rightarrow$ `Pesanan`
 
     * **Tabel Terlibat:** **Tabel Item Pesanan** (Riyan Zacki Saputra) menggunakan `Variant_Id` sebagai Foreign Key.
+
