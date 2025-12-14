@@ -69,7 +69,27 @@ Penggabungan tabel User dan Customer dilakukan untuk menjaga normalisasi data hi
    Fungsi        : Mengelola ketersediaan stok setiap varian produk berdasarkan lokasi penyimpanan, memantau jumlah stok, serta mendukung proses pengendalian persediaan dan transaksi penjualan.
 7...
 8...
-....
+9...
+22. Tabel Klaim Promo
+    ENTITAS UTAMA : (klaim promo)
+    ATRIBUT : sebagai berikut ya ges
+    -Klaim_id : sebagai primary key, identitas unik pada tabel klaim promo (Primary key), kunci utama.
+    -user_id : menunjukan siapa yang klaim promo (Foreign key), relasi ke tabel = User.
+    -Promo_id : promo yang di klaim (Foreign Key), relasi ke tabel = promo
+    -Order_id : promo yang di gunakan pada pesanan tertentu (Foreign Key), relasinya ke tabel = order
+    -Klaim_Date : yaitu waktu promo yang diklaim
+    -Klaim_status : mengetahui promo yang di ambil berhasil/dibatalkan
+    RELASI : ada 3 relasi yang bisa saya tunjukan:
+    [klaim promo + User] : dengan relasinya itu One-to-Many(1:N) yaitu:
+    -satu user bisa mengklaim banyak promo
+    -satu klaim promo hanya milik satu user
+    [Klaim promo + promo] : relasi One-to-Many(1:N) dijelaskan:
+    -satu promo dapat digunakan oleh banyak user
+    -satu klaim hanya untuk satu promo
+    [Klaim promo + Pesanan] : relasinya One-to-One(1:0.1) yaitu:
+    -satu pesanan boleh tidak pake promo
+    -jika pake promo'n hanya satu promo 
+        
 26. Tabel Lokasi Operasional
     Entitas utama : Lokasi Operasional
     Atribut Utama : Location_Id (PK), Location_Name
