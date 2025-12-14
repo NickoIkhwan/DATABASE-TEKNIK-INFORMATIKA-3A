@@ -176,7 +176,50 @@ Tabel `inventory` berfungsi untuk mengelola ketersediaan stok setiap varian prod
 
 ---
 
-## 16.
+## 16. Tabel Metode Pembayaran  
+*(Ditambahkan oleh Panji Pramudia)*
+
+### Deskripsi  
+Tabel `payment_methods` merupakan hasil normalisasi untuk memisahkan konfigurasi teknis pembayaran dari data penyedia layanan (Partners). Dalam sistem e-commerce, satu penyedia layanan (seperti Bank) dapat memiliki berbagai jenis produk pembayaran (Virtual Account, Kartu Kredit), sehingga pemisahan tabel ini dilakukan untuk menghindari redundansi data penyedia serta memudahkan pengaturan biaya layanan yang berbeda-beda.
+
+---
+
+### Atribut  
+Tabel `payment_methods` memiliki atribut sebagai berikut:
+
+- `method_id` : Primary key yang mengidentifikasi setiap metode pembayaran secara unik  
+- `partner_id` : Foreign key yang menghubungkan metode ini dengan data penyedia layanan (partners)  
+- `category_id` : Foreign key yang mengelompokkan metode ke dalam jenis tertentu (seperti E-Wallet atau Transfer Bank)  
+- `method_name` : Menyimpan nama tampilan metode pembayaran di aplikasi  
+- `method_code` : Kode unik (slug) yang digunakan untuk integrasi API dengan payment gateway  
+- `admin_fee_flat` : Menyimpan nominal biaya admin dalam bentuk rupiah tetap  
+- `admin_fee_percent` : Menyimpan biaya admin dalam bentuk persentase  
+- `min_amount` : Membatasi jumlah minimal transaksi yang diperbolehkan  
+- `is_active` : Menunjukkan status ketersediaan metode pembayaran (aktif / nonaktif)  
+
+---
+
+### Relasi  
+Tabel `payment_methods` memiliki relasi dengan beberapa tabel lain, yaitu:
+
+- **partners – payment_methods** (1 : N)  
+  Satu partner (penyedia) dapat menyediakan lebih dari satu metode pembayaran  
+
+- **payment_categories – payment_methods** (1 : N)  
+  Satu kategori pembayaran dapat membawahi banyak metode pembayaran  
+
+- **payment_methods – payments** (1 : N)  
+  Satu metode pembayaran dapat digunakan dalam banyak riwayat transaksi yang dilakukan user  
+
+---
+
+### Fungsi  
+Tabel `payment_methods` berfungsi sebagai pusat konfigurasi opsi pembayaran dalam sistem e-commerce. Tabel ini digunakan untuk menampilkan pilihan bayar yang tersedia di halaman *checkout*, menjadi acuan perhitungan total biaya admin secara otomatis, serta menjadi referensi validasi bagi tabel transaksi (payments). Dengan adanya tabel ini, sistem dapat mengelola penambahan atau penonaktifan metode bayar secara dinamis tanpa mengganggu integritas data.
+
+---
+
+### Catatan Normalisasi  
+Pemisahan tabel **Partners** dan **Payment Methods** dilakukan untuk menjaga normalisasi data hingga **Third Normal Form (3NF)**, mencegah duplikasi data penyedia layanan, serta mendukung skalabilitas jika terjadi penambahan produk pembayaran baru di masa depan.
 
 ---
 
