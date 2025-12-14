@@ -92,9 +92,9 @@ Penggabungan tabel User dan Customer dilakukan untuk menjaga normalisasi data hi
             :  Pengiriman_Status | Status terbaru paket (misalnya: Diambil Kurir, Dalam Perjalanan, Tiba di Hub, Diterima)
 Relasi Tabel Detail Pengiriman
 Tabel Detail Pengiriman adalah tabel yang sangat terikat dengan alur transaksi:
-| *Pesanan* (Tabel 13) | 1 : 1 | Satu Pesanan memiliki Satu Detail Pengiriman (Order_Id FK). |
-| *Jasa Pengiriman* (Tabel 17) | N : 1 | Banyak Detail Pengiriman menggunakan Satu Jenis Layanan Pengiriman (Courier_Id FK). |
-| *Patner Company* (Tabel 28) | N : 1 | Secara tidak langsung, Jasa Pengiriman terkait dengan Partner Company (Logistik). |
+ Pesanan (Tabel 13) > 1 : 1 > Satu Pesanan memiliki Satu Detail Pengiriman (Order_Id FK). 
+ Jasa Pengiriman (Tabel 17) > N : 1 > Banyak Detail Pengiriman menggunakan Satu Jenis Layanan Pengiriman (Courier_Id FK). 
+ Patner Company (Tabel 28) > N : 1 > Secara tidak langsung, Jasa Pengiriman terkait dengan Partner Company (Logistik). 
  Kesimpulan
 Tabel Detail Pengiriman dirancang untuk memastikan pengelolaan data logistik berjalan efisien, terpusat, dan mendukung fitur pelacakan real-time. Desain ini memenuhi kaidah normalisasi hingga Third Normal Form (3NF).
 
