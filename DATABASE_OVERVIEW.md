@@ -90,14 +90,12 @@ Penggabungan tabel User dan Customer dilakukan untuk menjaga normalisasi data hi
     -satu pesanan boleh tidak pake promo
     -jika pake promo'n hanya satu promo 
         
-26. Tabel Lokasi Operasional 
-    Entitas utama : Lokasi Operasional
-    Atribut Utama : Location_Id (PK), Location_Name
-   Relasi : Lokasi Operasional <> Inventory (1 : N) → Satu lokasi operasional dapat menyimpan banyak data stok produk.
-            Lokasi Operasional <> Unit Operasional (1 : N) → Satu lokasi operasional dapat digunakan oleh banyak unit atau aktivitas kerja.
-   Fungsi : Menyimpan dan mengelola data lokasi operasional sebagai referensi utama dalam sistem, memastikan konsistensi penggunaan lokasi pada berbagai modul, serta mendukung pengelolaan aktivitas operasional dan penyimpanan barang.
-
-Kalau mau, kirim:
+26. Tabel Lokasi Operasional (Ditambahkan oleh Najwa Alief Nursfhifa)
+Entitas utama : Lokasi Operasional
+Atribut Utama : Location_Id (PK), Location_Name
+Relasi : Lokasi Operasional <> Inventory (1 : N) → Satu lokasi operasional dapat menyimpan banyak data stok produk.
+         Lokasi Operasional <> Unit Operasional (1 : N) → Satu lokasi operasional dapat digunakan oleh banyak unit atau aktivitas kerja.
+Fungsi : Menyimpan dan mengelola data lokasi operasional sebagai referensi utama dalam sistem, memastikan konsistensi penggunaan lokasi pada berbagai modul, serta mendukung pengelolaan aktivitas operasional dan penyimpanan barang.
 
 ---
 
