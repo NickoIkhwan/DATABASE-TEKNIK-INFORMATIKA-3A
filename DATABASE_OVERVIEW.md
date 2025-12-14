@@ -21,7 +21,7 @@
 - Struktur database mendukung skalabilitas sistem
 
 ## Entitas Utama dan Fungsinya
-1. **Tabel User**
+1. **Tabel User** (Ditambahkan Oleh Tika Isnaeni)
 Tabel users merupakan hasil penggabungan antara tabel User dan Customer untuk meningkatkan efisiensi penyimpanan data dan menghindari redundansi. Dalam sistem e-commerce (Zalora-like), customer pada dasarnya adalah user yang telah melakukan autentikasi dan memiliki aktivitas transaksi, sehingga pemisahan tabel dianggap tidak diperlukan.
 
 Atribut:
@@ -60,14 +60,15 @@ Penggabungan tabel User dan Customer dilakukan untuk menjaga normalisasi data hi
 3.
 4. ....
 5.
-6.
-7. Tabel Inventory
+6. Tabel Inventory (Ditambahk oleh Daris Nabil Maftuh)
    Entitas utama : Inventory (Stok Produk)
    Atribut Utama : Inventory_Id (PK), Variant_Id (FK), Location_Id (FK), Stock_Qty, Stock_Minimum, Stock_Status, Last_Updated
    Relasi        : Inventory <> Varian Produk (1 : 1 / 1 : N) → Satu varian produk memiliki data stok.
                    Inventory <> Lokasi Operasional (N : 1) → Banyak data stok berada pada satu lokasi (gudang/toko).
                    Inventory <> Item Pesanan (tidak langsung) → Stok berkurang saat terjadi transaksi pembelian.
    Fungsi        : Mengelola ketersediaan stok setiap varian produk berdasarkan lokasi penyimpanan, memantau jumlah stok, serta mendukung proses pengendalian persediaan dan transaksi penjualan.
+7...
+8...
 ....
 26. Tabel Lokasi Operasional
     Entitas utama : Lokasi Operasional
