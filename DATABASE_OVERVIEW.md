@@ -264,3 +264,13 @@ Tabel `lokasi_operasional` berfungsi untuk menyimpan dan mengelola data lokasi o
 
 - Detail SQL dan implementasi teknis disesuaikan oleh Database Engineer (Satu Kelas)
 - Dokumen ini digunakan sebagai acuan konseptual dan akademik
+
+---
+
+## 27.
+
+---
+
+## 28.
+
+---
