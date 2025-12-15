@@ -76,7 +76,10 @@ Tabel `users` memiliki relasi dengan beberapa tabel lain, yaitu:
   Satu pengguna memiliki banyak catatan log aktivitas  
 
 - **users – riwayat_pencarian** (1 : N)  
-  Satu pengguna memiliki banyak riwayat pencarian produk  
+  Satu pengguna memiliki banyak riwayat pencarian produk
+
+- **users - klaim promo** (1 : N)
+  Satu pengguna memiliki banyak promo yang dapat diklaim
 
 ### Fungsi  
 Tabel `users` berfungsi sebagai pusat data pengguna dalam sistem e-commerce. Tabel ini digunakan untuk mengelola autentikasi dan otorisasi pengguna, menyimpan data profil customer, serta menjadi referensi utama bagi seluruh aktivitas pengguna seperti transaksi, subscription, pengajuan return, dan penggunaan promo. Dengan adanya tabel ini, sistem dapat mengelola data pengguna secara terintegrasi dan konsisten.
@@ -425,6 +428,7 @@ Tabel `lokasi_operasional` berfungsi untuk menyimpan dan mengelola data lokasi o
 ## 28.
 
 ---
+
 
 
 
