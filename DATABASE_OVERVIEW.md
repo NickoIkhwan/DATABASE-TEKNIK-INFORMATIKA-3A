@@ -98,7 +98,7 @@ Penggabungan tabel **User** dan **Customer** dilakukan untuk menjaga normalisasi
 
 ---
 
-## 3. Analisis Tugas Basis Data: Tabel Produk 
+## 3. Tabel Produk 
 *(Ditambahkan oleh Faiq Ahmad)*
 
 ## No. 1: Analisis Atribut pada Tabel Produk
@@ -510,6 +510,7 @@ Produk memiliki relasi N:M dengan entitas lain (seperti Keranjang atau Pesanan) 
 * **Produk** ↔ **Pesanan**
     * **Jalur:** `Produk` (1:N) $\rightarrow$ `Varian` (1:N) $\rightarrow$ `Item Pesanan` (N:1) $\rightarrow$ `Pesanan`
     * **Tabel Terlibat:** **Tabel Item Pesanan** (Riyan Zacki Saputra) menggunakan `Variant_Id` sebagai Foreign Key.
+
 
 
 
