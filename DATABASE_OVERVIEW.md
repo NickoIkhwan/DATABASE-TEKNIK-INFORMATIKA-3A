@@ -324,7 +324,41 @@ Pemisahan tabel **Partners** dan **Payment Methods** dilakukan untuk menjaga nor
 ---
 
 
-## 17.
+## 17. Tabel Jasa Pengiriman 
+*(ditambah oleh Rafik Hidayat)*
+
+## Deskripsi 
+Tabel Jasa_Pengiriman digunakan untuk menyimpan data perusahaan atau pihak ekspedisi yang melayani pengiriman barang kepada pelanggan. Tabel ini mencatat informasi dasar jasa pengiriman seperti nama ekspedisi, logo, dan status keaktifan. Data pada tabel ini menjadi referensi utama dalam proses pengiriman pesanan sehingga tidak terjadi pengulangan data jasa pengiriman pada setiap transaksi.
+
+## Atribut 
+Tabel jasa pengiriman memiliki Atribut:
+
+Id_Pengiriman (PK) : Primary Key, identitas unik jasa pengiriman
+Nama_Pengiriman : Nama ekspedisi (JNE, J&T, dll)
+Service_Type : Jenis layanan (REG, YES, ECO, dll)
+Estimasi_Delivery_Days : Estimasi waktu pengiriman
+Logo : Logo jasa pengiriman
+Status : Aktif / Nonaktif
+
+## Relasi
+Relasi 1: Jasa_Pengiriman → Detail_Pengiriman
+One to Many (1 : N)
+Satu jasa pengiriman bisa digunakan oleh banyak pengiriman
+Relasi:
+Jasa_Pengiriman.Courier_Id (PK)
+Detail_Pengiriman.Courier_Id (FK)
+
+Relasi 2: Pesanan → Detail_Pengiriman
+One to One / One to Many
+Setiap pesanan memiliki detail pengiriman
+Relasi:
+Pesanan.Order_Id (PK)
+Detail_Pengiriman.Order_Id (FK)
+
+## Fungsi 
+Tabel Jasa_Pengiriman berfungsi untuk menyimpan dan mengelola data master perusahaan ekspedisi yang digunakan dalam proses pengiriman pesanan. Tabel ini menjadi referensi utama dalam menentukan jasa pengiriman pada setiap transaksi, sehingga sistem dapat mencatat informasi pengiriman secara konsisten dan terstruktur. Selain itu, tabel ini membantu menghindari duplikasi data jasa pengiriman, memudahkan pengelolaan layanan pengiriman, serta mendukung integritas data dalam sistem informasi penjualan atau e-commerce.
+
+
 
 
 ---
@@ -452,6 +486,7 @@ Tabel `lokasi_operasional` berfungsi untuk menyimpan dan mengelola data lokasi o
 ## 28.
 
 ---
+
 
 
 
